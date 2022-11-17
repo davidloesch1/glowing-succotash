@@ -8,17 +8,13 @@ export default function Authentication() {
   return (
     <View style={styles.container}>
       <Icon name="open-book" type="entypo" size={100} style={styles.mainIcon} />
-      <Text style={styles.text}>StoryTime Fun!</Text>
+      <Text h2 style={styles.text}>StoryTime Fun!</Text>
       <Input
         placeholder="Username"
         type="email"
         style={styles.inputField}
         leftIcon={
-          <Icon
-            name="emoticon-cool-outline"
-            type="material-community"
-            onPressO={() => console.log("Hello")}
-          />
+          <Icon name="emoticon-cool-outline" type="material-community" />
         }
       />
       <Input
@@ -26,16 +22,11 @@ export default function Authentication() {
         type="password"
         secureTextEntry
         style={styles.inputField}
-        leftIcon={
-          <Icon
-            name="key"
-            type="entypo"
-            onPressO={() => console.log("Hello")}
-          />
-        }
+        leftIcon={<Icon name="key" type="entypo" />}
       />
       <View style={styles.btnContainer}>
         <Button
+          onPress={() => console.log("Sign Up button!")}
           title="Sign Up"
           loading={false}
           titleStyle={{
@@ -49,6 +40,7 @@ export default function Authentication() {
           }}
         />
         <Button
+          onPress={() => console.log("Sign In button!")}
           title="Sign In"
           loading={false}
           titleStyle={{
@@ -60,6 +52,12 @@ export default function Authentication() {
           buttonStyle={{}}
         />
       </View>
+      <Text
+        style={{ textAlign: "center", marginTop: 50, color: "blue" }}
+        onPress={() => console.log("Ya dingleberry! you forgot your password!")}
+      >
+        Forgot Password?
+      </Text>
     </View>
   );
 }
