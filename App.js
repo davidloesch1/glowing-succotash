@@ -1,14 +1,16 @@
-import { StatusBar } from "expo-status-bar";
+import { useState } from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { StyleSheet, Text, View } from "react-native";
-import { Button, ThemeProvider } from "react-native-elements";
+import { StyleSheet, Text, View, } from "react-native";
+import { ThemeProvider, Input, Icon, Button } from "react-native-elements";
+import Main from "./components/Main";
+import Authentication from "./views/Authentication";
+import React from "react";
 
 export default function App() {
   return (
     <SafeAreaProvider>
       <ThemeProvider>
-        <Button title="Hey!" />
-        <Text>tests</Text>
+        <Authentication />
       </ThemeProvider>
     </SafeAreaProvider>
   );
@@ -16,9 +18,5 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
+     }
 });
