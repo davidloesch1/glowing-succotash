@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { View, StatusBar, StyleSheet, FlatList } from "react-native";
-import { STORIES, STORY } from "../dataObjects/Story";
+import { STORIES, STORY } from "../../dataObjects/Story";
 import StoryCard from "./StoryCard";
 
 export default function Main() {

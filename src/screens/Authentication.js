@@ -1,14 +1,18 @@
 import { useState } from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, useWindowDimensions } from "react-native";
 import { ThemeProvider, Input, Icon, Button } from "react-native-elements";
 import React from "react";
 
 export default function Authentication() {
+  const { height } = useWindowDimensions();
+
   return (
     <View style={styles.container}>
-      <Icon name="open-book" type="entypo" size={100} style={styles.mainIcon} />
-      <Text h2 style={styles.text}>StoryTime Fun!</Text>
+      <Icon name="open-book" type="entypo" style={styles.mainIcon} size={80} />
+      <Text h2 style={styles.text}>
+        StoryTime Fun!
+      </Text>
       <Input
         placeholder="Username"
         type="email"
@@ -38,6 +42,7 @@ export default function Authentication() {
           buttonStyle={{
             backgroundColor: "rgba(111, 202, 186, 1)",
           }}
+          containerStyle={{ display: "flex" }}
         />
         <Button
           onPress={() => console.log("Sign In button!")}
@@ -50,6 +55,7 @@ export default function Authentication() {
             marginBottom: 5,
           }}
           buttonStyle={{}}
+          containerStyle={{ display: "flex" }}
         />
       </View>
       <Text
@@ -65,26 +71,24 @@ export default function Authentication() {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    justifyContent: "center",
+    alignItems: "center",
     alignContent: "center",
+    justifyContent: "center",
     display: "flex",
     flex: 1,
     // backgroundColor: "orange",
   },
-  mainIcon: {
-    marginBottom: 10,
-  },
+  mainIcon: {},
   text: {
     textAlign: "center",
     marginBottom: 100,
-
-    // display: "flex",
+    display: "flex",
   },
   btnContainer: {
     justifyContent: "space-evenly",
     display: "flex",
     flexDirection: "row",
-    // backgroundColor: "red",
+    width: '100%'
   },
-  // inputField: { backgroundColor: "green" },
+  inputField: { backgroundColor: "white", display: "flex" },
 });
